@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment_Contactos">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/txtContactos"
+        android:layout_margin="@dimen/margen_Minimo_Datos"
+        android:text="@string/listaDeContactos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvContactos"
+        android:layout_marginTop="@dimen/margen_Maximo_Datos"
+        android:padding="@dimen/margen_Minimo_Datos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>
