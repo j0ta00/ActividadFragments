@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBindings
@@ -42,7 +43,7 @@ class Fragment_Contactos : Fragment() {
         Contacto("DFASDF","E","78943545747","FG"),
         Contacto("LEPOR","R","9876543","UKELELE"),
     )
-
+    private val model: ViewModelContacto by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,7 +52,10 @@ class Fragment_Contactos : Fragment() {
         val rootView=FragmentContactosBinding.inflate(inflater, container, false).root
         val recyclerView=rootView.findViewById<RecyclerView>(R.id.rcvContactos)
         recyclerView?.layoutManager= LinearLayoutManager(rootView.context)
-        recyclerView?.adapter= AdaptadorContacto(contactos)
+        recyclerView?.adapter=AdaptadorContacto(contactos)
+        recyclerView.setOnClickListener(View.OnClickListener { view ->
+
+        })
         // Inflate the layout for this fragment
         return rootView
     }
